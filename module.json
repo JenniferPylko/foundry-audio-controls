@@ -1,0 +1,22 @@
+{
+  "id": "jennys-audio-controls",
+  "title": "jenny's audio controls",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "esmodules": [
+    "main.mjs"
+  ],
+  "authors": [
+    {
+      "name": "jenny",
+      "discord": "jennyofworms",
+      "url": "https://github.com/JenniferPylko",
+      "flags": {}
+    }
+  ],
+  "manifest": "https://raw.githubusercontent.com/JenniferPylko/foundry-audio-controls/main/module.json",
+  "download": "https://github.com/JenniferPylko/foundry-audio-controls/archive/refs/tags/v0.0.1.zip"
+}
