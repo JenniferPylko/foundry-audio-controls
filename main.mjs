@@ -1,9 +1,26 @@
+const id = "jennys-audio-controls"
+// Simple log helper for strings or objects
+const log = (arg) => {
+    console.info(id, arg)
+}
 const controls = {}
+// V11, V12 has one document structure, V13 has another.
+let path;
+Hooks.on("init", () => {
+    const versionSemVer = game.version;
+    const major = parseInt(versionSemVer.substring(0, versionSemVer.indexOf('.')))
+    if (major < 13) {
+        path = "#currently-playing .playlist-sounds .sound";
+    } else {
+        path = "#playlists .currently-playing .playlist-sounds .sound";
+    }
+    log(`Foundry version ${versionSemVer}, path ${path}`)
+})
 const handleDirectory = async (directory) => {
     if (!(directory instanceof PlaylistDirectory)) {
         return
     }
-    const sounds = Array.from(document.querySelectorAll(".currently-playing .playlist-sounds .sound"))
+    const sounds = Array.from(document.querySelectorAll(path))
         .filter(element => element.dataset.playlistId && element.dataset.soundId)
         .map((element) => ({
             element,
